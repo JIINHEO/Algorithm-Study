@@ -30,6 +30,3 @@ for i in range(h+1): #5
 print(count)
 
 #완전 탐색 유형 - 가능한 경우의 수를 모두 검사해보는 탐색 방법.
-
-for i in range(5):
-    print(i)
