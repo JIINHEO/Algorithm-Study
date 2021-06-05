@@ -20,5 +20,11 @@ print(solution(118372))
 #저렇게 간단하게 풀 수 있었.. 😂
 #
 #하하 너무 재밌습니다.
-#
-#출처: https://jiinheo.tistory.com/52 [J I I N 's devlog]
+
+#<최적코드>
+def solution(n): 
+    ls = list(str(n)) 
+    ls.sort(reverse=True) 
+    return int(''.join(ls)) 
+# 아래는 테스트로 출력해 보기 위한 코드입니다. 
+print(solution(118372))
