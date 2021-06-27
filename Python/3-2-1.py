@@ -36,3 +36,22 @@ print(result) # 최종 답안 출력
 
 # <출력>
 # 46
+
+
+
+
+# <다른 풀이>
+n, m, k = map(int, input().split())
+data = list(map(int, input().split()))
+
+data.sort(reverse=True)
+result = 0
+for i in range(1, m+1): # m번만큼 반복할거야
+
+    if i % k != 0:
+        result += data[0]
+    else:
+        result += data[1]
+
+print(result)
+
