@@ -14,4 +14,4 @@
 
 * [Python](https://github.com/JIINHEO/Algorithm-Study/tree/master/Python) (이것이 취업을위한 코딩테스트다 with 파이썬)
 
-* [Boostcamp](https://github.com/JIINHEO/Algorithm-Study/tree/master/Boostcamp)
+* [Boostcamp](https://github.com/JIINHEO/Algorithm-Study/tree/master/boostcamp)
