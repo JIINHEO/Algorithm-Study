@@ -172,3 +172,46 @@ print(solution_count_7([7, 77, 17]))
 print(solution_count_7([10, 29]))
 print("=================================================")
 
+
+/*
+ [ 숨어있는 숫자의 덧셈 (2) ]
+ 
+ 문자열 my_string이 매개변수로 주어집니다.
+ my_string은 소문자, 대문자, 자연수로만 구성되어있습니다.
+ my_string안의 자연수들의 합을 return하도록 solution 함수를 완성해주세요.
+
+ 연속된 수는 하나의 숫자로 간주합니다.
+ 
+ 입출력 예
+ my_string    result
+ "aAb1B2cC34oOp"    37
+ "1a2b3c4d123Z"    133
+ */
+
+func solution_sum_hidden_num(_ my_string:String) -> Int {
+    // 이 방법보단... 문자열을 replace "" 하고 split 해서 더해주는게 더 좋지 않았을까
+    let ascii = Int(UnicodeScalar("9").value)
+    let arr = Array(my_string)
+    
+    var i = 0
+    var result = 0
+    while (i < arr.count) {
+        if arr[i].asciiValue! <= ascii {
+            var j = 1
+            var str  = String(arr[i])
+            while(i + j < arr.count && arr[i + j].asciiValue! <= ascii) {
+                str += String(arr[i + j])
+                j += 1
+            }
+            result += Int(str)!
+            i += j
+        }
+        i += 1
+    }
+    return result
+    
+}
+
+print(solution_sum_hidden_num("aAb1B2cC34oOp"))
+print(solution_sum_hidden_num("1a2b3c4d123Z"))
+print("=================================================")
