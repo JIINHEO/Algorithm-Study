@@ -76,7 +76,7 @@ print("=================================================")
 
 func solution_control_z(_ s:String) -> Int {
     
-    var array = s.components(separatedBy: " ")
+    let array = s.components(separatedBy: " ")
     var result = 0
 
     for i in 0..<array.count {
@@ -145,3 +145,30 @@ func solution_binary_sum(_ bin1:String, _ bin2:String) -> String {
 print(solution_binary_sum("10", "11"))
 print(solution_binary_sum("1001", "1111"))
 print("=================================================")
+
+/*
+ [ 7의 개수 ]
+ 
+ 머쓱이는 행운의 숫자 7을 가장 좋아합니다.
+ 정수 배열 array가 매개변수로 주어질 때, 7이 총 몇 개 있는지 return 하도록 solution 함수를 완성해보세요.
+ 
+ 입출력 예
+ array    result
+ [7, 77, 17]    4
+ [10, 29]    0
+ */
+
+func solution_count_7(_ array:[Int]) -> Int {
+    var count = 0
+    for item in array {
+        let array = Array(String(item))
+        count += array.filter{$0 == "7"}.count
+    }
+    
+    return count
+}
+
+print(solution_count_7([7, 77, 17]))
+print(solution_count_7([10, 29]))
+print("=================================================")
+
