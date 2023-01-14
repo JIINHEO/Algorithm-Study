@@ -42,6 +42,7 @@ func solution_prime(_ n:Int) -> [Int] {
 
 }
 print(solution_prime(17))
+print("=================================================")
 
 // n 을 소인수분해하기 + 오름차순 + 중복제거
 func solution_prime_factorization(_ n:Int) -> [Int] {
@@ -58,8 +59,7 @@ func solution_prime_factorization(_ n:Int) -> [Int] {
 
 print(solution_prime_factorization(12))
 print(solution_prime_factorization(17))
-
-
+print("=================================================")
 /*
 [ 컨트롤 제트 ]
  
@@ -94,7 +94,7 @@ print(solution_control_z("10 20 30 40")) // 100
 print(solution_control_z("10 Z 20 Z 1")) // 1
 print(solution_control_z("10 Z 20 Z")) // 0
 print(solution_control_z("-1 -2 -3 Z")) //-3
-
+print("=================================================")
 
 /*
  [ 한 번만 등장한 문자 ]
@@ -124,3 +124,24 @@ print(solution_1_char("abcabcadc"))
 print(solution_1_char("s"))
 print(solution_1_char("abdc"))
 print(solution_1_char("hello"))
+print("=================================================")
+
+/*
+ [ 이진수 더하기 ]
+ 이진수를 의미하는 두 개의 문자열 bin1과 bin2가 매개변수로 주어질 때,
+ 두 이진수의 합을 return하도록 solution 함수를 완성해주세요.
+ 
+ 입출력 예
+ bin1    bin2    result
+ "10"    "11"    "101"
+ "1001"    "1111"    "11000"
+ */
+
+func solution_binary_sum(_ bin1:String, _ bin2:String) -> String {
+    let sum = Int(bin1, radix: 2)! + Int(bin2, radix: 2)!
+    return String(sum, radix: 2)
+}
+
+print(solution_binary_sum("10", "11"))
+print(solution_binary_sum("1001", "1111"))
+print("=================================================")
