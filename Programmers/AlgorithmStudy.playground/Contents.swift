@@ -189,7 +189,7 @@ print("=================================================")
  */
 
 func solution_sum_hidden_num(_ my_string:String) -> Int {
-    // 이 방법보단... 문자열을 replace "" 하고 split 해서 더해주는게 더 좋지 않았을까
+    // 이 방법보단... 문자열을 replace "" 하고 split 해서 더해주는게 더 좋지 않았을까t
     let ascii = Int(UnicodeScalar("9").value)
     let arr = Array(my_string)
     
@@ -214,4 +214,30 @@ func solution_sum_hidden_num(_ my_string:String) -> Int {
 
 print(solution_sum_hidden_num("aAb1B2cC34oOp"))
 print(solution_sum_hidden_num("1a2b3c4d123Z"))
+print("=================================================")
+
+/*
+ [ 영어가 싫어요 ]
+
+ 영어가 싫은 머쓱이는 영어로 표기되어있는 숫자를 수로 바꾸려고 합니다.
+ 문자열 numbers가 매개변수로 주어질 때, numbers를 정수로 바꿔 return 하도록 solution 함수를 완성해 주세요.
+ 
+ 입출력 예
+ numbers    result
+ "onetwothreefourfivesixseveneightnine"    123456789
+ "onefourzerosixseven"    14067
+ */
+
+func solution_en_to_num(_ numbers:String) -> Int64 {
+    let arr = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"]
+    var str = numbers
+    
+    for i in 0..<arr.count{
+        str = str.replacingOccurrences(of: arr[i], with: "\(i)")
+    }
+    return Int64(str)!
+}
+
+print(solution_en_to_num("onetwothreefourfivesixseveneightnine"))
+print(solution_en_to_num("onefourzerosixseven"))
 print("=================================================")
