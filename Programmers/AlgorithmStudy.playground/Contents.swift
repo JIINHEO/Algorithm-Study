@@ -59,3 +59,39 @@ func solution_prime_factorization(_ n:Int) -> [Int] {
 print(solution_prime_factorization(12))
 print(solution_prime_factorization(17))
 
+
+/*
+[ 컨트롤 제트 ]
+ 
+ 숫자와 "Z"가 공백으로 구분되어 담긴 문자열이 주어집니다. 문자열에 있는 숫자를 차례대로 더하려고 합니다.
+ 이 때 "Z"가 나오면 바로 전에 더했던 숫자를 뺀다는 뜻입니다.
+ 숫자와 "Z"로 이루어진 문자열 s가 주어질 때, 머쓱이가 구한 값을 return 하도록 solution 함수를 완성해보세요.
+
+ 입출력 예 #2
+ 10 + 20 + 30 + 40 = 100을 return 합니다.
+ 
+ 입출력 예 #3
+ "10 Z 20 Z 1"에서 10 다음 Z, 20 다음 Z로 10, 20이 지워지고 1만 더하여 1을 return 합니다.
+ */
+
+func solution_control_z(_ s:String) -> Int {
+    
+    var array = s.components(separatedBy: " ")
+    var result = 0
+
+    for i in 0..<array.count {
+        if array[i] != "Z" {
+            result += Int(array[i])!
+        } else {
+            result -= Int(array[i - 1])!
+        }
+    }
+    return result
+}
+
+print(solution_control_z("1 2 Z 3")) // 1, 3 = 4
+print(solution_control_z("10 20 30 40")) // 100
+print(solution_control_z("10 Z 20 Z 1")) // 1
+print(solution_control_z("10 Z 20 Z")) // 0
+print(solution_control_z("-1 -2 -3 Z")) //-3
+
