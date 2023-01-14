@@ -95,3 +95,32 @@ print(solution_control_z("10 Z 20 Z 1")) // 1
 print(solution_control_z("10 Z 20 Z")) // 0
 print(solution_control_z("-1 -2 -3 Z")) //-3
 
+
+/*
+ [ 한 번만 등장한 문자 ]
+ 문자열 s가 매개변수로 주어집니다.
+ s에서 한 번만 등장하는 문자를 사전 순으로 정렬한 문자열을 return 하도록 solution 함수를 완성해보세요.
+ 한 번만 등장하는 문자가 없을 경우 빈 문자열을 return 합니다.
+ 
+ 입출력 예
+ s    result
+ "abcabcadc"    "d"
+ "abdc"    "abcd"
+ "hello"    "eho"
+ */
+
+func solution_1_char(_ s:String) -> String {
+    let dic = Dictionary(s.map{($0, 1)},uniquingKeysWith: +)
+    var array = [Character]()
+    for (key, value) in dic {
+        if value == 1 {
+            array.append(key)
+        }
+    }
+    return String(array.sorted())
+}
+
+print(solution_1_char("abcabcadc"))
+print(solution_1_char("s"))
+print(solution_1_char("abdc"))
+print(solution_1_char("hello"))
