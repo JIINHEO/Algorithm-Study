@@ -253,7 +253,7 @@ print("=================================================")
  */
 
 func solution_cal_string(_ my_string:String) -> Int {
-    var arr = my_string.split(separator: " ")
+    let arr = my_string.split(separator: " ")
     var result = Int(arr[0])!
     for i in arr.enumerated() {
         if i.element == "+" {
@@ -267,4 +267,39 @@ func solution_cal_string(_ my_string:String) -> Int {
 }
 
 print(solution_cal_string("3 + 4"))
+print("=================================================")
+
+/*
+ [ OX퀴즈 ]
+
+ 덧셈, 뺄셈 수식들이 'X [연산자] Y = Z' 형태로 들어있는 문자열 배열 quiz가 매개변수로 주어집니다. 수식이 옳다면 "O"를 틀리다면 "X"를 순서대로 담은 배열을 return하도록 solution 함수를 완성해주세요.
+
+ 입출력 예
+ quiz    result
+ ["3 - 4 = -3", "5 + 6 = 11"]    ["X", "O"]
+ ["19 - 6 = 13", "5 + 66 = 71", "5 - 15 = 63", "3 - 1 = 2"]    ["O", "O", "X", "O"]
+ */
+
+func solution_OX_quiz(_ quiz:[String]) -> [String] {
+    var result = [String]()
+    for item in quiz {
+        let arr = item.split(separator: " ")
+        var cal = 0
+
+        if arr[1] == "+" {
+            cal = Int(arr[0])! + Int(arr[2])!
+        } else {
+            cal = Int(arr[0])! - Int(arr[2])!
+        }
+        
+        if Int(arr[4])! == cal {
+            result.append("O")
+        }else {
+            result.append("X")
+        }
+    }
+    return result
+}
+
+print(solution_OX_quiz(["3 - 4 = -3", "5 + 6 = 11"]))
 print("=================================================")
