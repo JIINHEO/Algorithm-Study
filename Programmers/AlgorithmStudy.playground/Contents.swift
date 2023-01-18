@@ -336,3 +336,34 @@ func solution_n_cut_array(_ my_str:String, _ n:Int) -> [String] {
 }
 
 print(solution_n_cut_array("abc1Addfggg4556b", 6))
+print("=================================================")
+
+/*
+ [ 직사각형 넓이 구하기 ]
+
+ 2차원 좌표 평면에 변이 축과 평행한 직사각형이 있습니다. 직사각형 네 꼭짓점의 좌표 [[x1, y1], [x2, y2], [x3, y3], [x4, y4]]가 담겨있는 배열 dots가 매개변수로 주어질 때, 직사각형의 넓이를 return 하도록 solution 함수를 완성해보세요.
+ 
+ 입출력 예
+ dots    result
+ [[1, 1], [2, 1], [2, 2], [1, 2]]    1
+ [[-1, -1], [1, 1], [1, -1], [-1, 1]]    4
+ 
+ https://school.programmers.co.kr/learn/courses/30/lessons/120860
+ */
+
+func solution_rec_area(_ dots:[[Int]]) -> Int {
+    var x = [Int]()
+    var y = [Int]()
+    
+    for i in dots {
+        x.append(i[0])
+        y.append(i[1])
+    }
+    
+    let width = x.max()! - x.min()!
+    let height = y.max()! - y.min()!
+    
+    return width * height
+}
+
+print(solution_rec_area([[1, 1], [2, 1], [2, 2], [1, 2]] ))
