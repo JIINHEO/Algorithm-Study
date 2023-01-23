@@ -722,3 +722,63 @@ func solution_service_chicken(_ chicken:Int) -> Int {
 print(solution_service_chicken(100))
 print(solution_service_chicken(1081))
 print("=================================================")
+
+/*
+ [ 유한소수 판별하기 ]
+ 
+ 소수점 아래 숫자가 계속되지 않고 유한개인 소수를 유한소수라고 합니다. 분수를 소수로 고칠 때 유한소수로 나타낼 수 있는 분수인지 판별하려고 합니다. 유한소수가 되기 위한 분수의 조건은 다음과 같습니다.
+
+ 기약분수로 나타내었을 때, 분모의 소인수가 2와 5만 존재해야 합니다.
+ 두 정수 a와 b가 매개변수로 주어질 때, a/b가 유한소수이면 1을, 무한소수라면 2를 return하도록 solution 함수를 완성해주세요.
+ 
+ 입출력 예
+ a    b    result
+ 7    20    1
+ 11    22    1
+ 12    21    2
+ https://school.programmers.co.kr/learn/courses/30/lessons/120878
+ */
+
+func solution_finite_decimal(_ a:Int, _ b:Int) -> Int {
+    var gcdNum = 0
+    gcdNum = gcd(a, b)
+    let denominator = b / gcdNum
+    
+    if a % b == 0 { // 정수
+        return 1
+    }
+    
+    var primes = [Int]()
+    var num = denominator
+    for i in 2...denominator {
+         while num % i == 0 {
+             primes.append(i)
+             if i != 2 && i != 5 {
+                 return 2
+             }
+            num /= i
+        }
+    }
+    return 1
+}
+
+func gcd(_ a: Int, _ b: Int) -> Int {
+    if b == 0 {
+        return a
+    } else {
+        return gcd(b, a%b)
+    }
+}
+
+print(solution_finite_decimal(7, 20))
+print(solution_finite_decimal(11, 22))
+print(solution_finite_decimal(12, 21))
+print(solution_finite_decimal(3500, 500))
+print("=================================================")
+
+// 20, 5의 최대공약수는 = 5
+
+
+//finite decimal
+//
+//numerator denominator
