@@ -829,4 +829,68 @@ print(solution_ranking([[80, 70], [90, 50], [40, 70], [50, 80]]))
 print(solution_ranking([[80, 70], [70, 80], [30, 50], [90, 100], [100, 90], [100, 100], [10, 30]]))
 print("=================================================")
 
+/*
+ [ 특이한 정렬 ]
+ 
+ 정수 n을 기준으로 n과 가까운 수부터 정렬하려고 합니다. 이때 n으로부터의 거리가 같다면 더 큰 수를 앞에 오도록 배치합니다. 정수가 담긴 배열 numlist와 정수 n이 주어질 때 numlist의 원소를 n으로부터 가까운 순서대로 정렬한 배열을 return하도록 solution 함수를 완성해주세요.
 
+ 입출력 예
+ numlist    n    result
+ [1, 2, 3, 4, 5, 6]    4    [4, 5, 3, 6, 2, 1]
+ [10000,20,36,47,40,6,10,7000]    30    [36, 40, 20, 47, 10, 6, 7000, 10000]
+ https://school.programmers.co.kr/learn/courses/30/lessons/120880
+ */
+
+func solution_unusal_sort(_ numlist:[Int], _ n:Int) -> [Int] {
+    var leftArr = numlist.filter{$0 <= n}.sorted(by: {$0 > $1})
+    var rightArry = numlist.filter{$0 > n}.sorted(by: {$0 < $1})
+    
+    var result = [Int]()
+    
+    while (leftArr.count > 0 && rightArry.count > 0) {
+        if (n - leftArr.first!) < (rightArry.first! - n){
+            result.append(leftArr.first!)
+            leftArr.remove(at: 0)
+        } else if (n - leftArr.first!) == (rightArry.first! - n) {
+            if leftArr.first! > rightArry.first! {
+                result.append(leftArr.first!)
+                leftArr.remove(at: 0)
+            } else {
+                result.append(rightArry.first!)
+                rightArry.remove(at: 0)
+            }
+        } else {
+            result.append(rightArry.first!)
+            rightArry.remove(at: 0)
+        }
+    }
+    
+    if leftArr.count > 0 {
+        for i in leftArr {
+            result.append(i)
+        }
+    } else if rightArry.count > 0{
+        for i in rightArry {
+            result.append(i)
+        }
+    }
+    
+    return result
+    /*
+     return numlist.sorted(by: { (abs($0 - n), -$0) < (abs($1 - n), -$1) })
+     
+     or
+     
+     numlist.sorted {
+             let a = abs($0 - n)
+             let b = abs($1 - n)
+
+             return a == b ? $0 > $1 : a < b
+         } 
+     */
+}
+
+
+print(solution_unusal_sort([1, 2, 3, 4, 5, 6], 4))
+print(solution_unusal_sort([10000,20,36,47,40,6,10,7000], 30))
+print("=================================================")
