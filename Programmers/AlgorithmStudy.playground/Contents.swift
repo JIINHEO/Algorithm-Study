@@ -266,8 +266,8 @@ func solution_triangle2(_ sides:[Int]) -> Int {
     let b = sides[1]
     let sum = a + b
 
-    var max = a < b ? b : a
-    var min = a < b ? a : b
+    let max = a < b ? b : a
+    let min = a < b ? a : b
     
     var result = 0
     // case1. 한 변이 sides에 있을 때
@@ -587,4 +587,31 @@ func solution_spell_dic(_ spell:[String], _ dic:[String]) -> Int {
 
 print(solution_spell_dic( ["z", "d", "x"], ["def", "dww", "dzx", "loveaw"]))
 print(solution_spell_dic( ["s", "o", "m", "d"], ["moos", "dzx", "smm", "sunmmo", "som"]))
+print("=================================================")
+
+/*
+ [ 종이 자르기 ]
+ 
+ 머쓱이는 큰 종이를 1 x 1 크기로 자르려고 합니다. 예를 들어 2 x 2 크기의 종이를 1 x 1 크기로 자르려면 최소 가위질 세 번이 필요합니다.
+ 
+ 입출력 예
+ M    N    result
+ 2    2    3
+ 2    5    9
+ 1    1    0
+ https://school.programmers.co.kr/learn/courses/30/lessons/120922?language=swift
+ */
+
+func solution_cut_paper(_ M:Int, _ N:Int) -> Int {
+//    let max = M <= N ? M : N
+//    let min = M <= N ? N : M
+//
+//    return (max - 1) + (max * (min - 1))
+    // m - 1 + mn - m  = nm - 1
+    return M * N - 1
+}
+
+print(solution_cut_paper(2, 2))
+print(solution_cut_paper(2, 5))
+print(solution_cut_paper(1, 1))
 print("=================================================")
