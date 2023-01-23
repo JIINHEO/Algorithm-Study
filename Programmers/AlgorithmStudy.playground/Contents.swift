@@ -3,7 +3,7 @@ import UIKit
 /*
  [ 소인수분해 ]
  
-    소인수분해란 어떤 수를 소수들의 곱으로 표현하는 것입니다. 예를 들어 12를 소인수 분해하면 2 * 2 * 3 으로 나타낼 수 있습니다. 따라서 12의 소인수는 2와 3입니다. 자연수 n이 매개변수로 주어질 때 n의 소인수를 오름차순으로 담은 배열을 return하도록 solution 함수를 완성해주세요.
+ 소인수분해란 어떤 수를 소수들의 곱으로 표현하는 것입니다. 예를 들어 12를 소인수 분해하면 2 * 2 * 3 으로 나타낼 수 있습니다. 따라서 12의 소인수는 2와 3입니다. 자연수 n이 매개변수로 주어질 때 n의 소인수를 오름차순으로 담은 배열을 return하도록 solution 함수를 완성해주세요.
  
  입출력 예 #1
  12를 소인수분해하면 2 * 2 * 3 입니다. 따라서 [2, 3]을 return합니다.
@@ -39,7 +39,7 @@ func solution_prime(_ n:Int) -> [Int] {
     }
     
     return primes
-
+    
 }
 print(solution_prime(17))
 print("=================================================")
@@ -49,7 +49,7 @@ func solution_prime_factorization(_ n:Int) -> [Int] {
     var primes = [Int]()
     var num = n
     for i in 2...n {
-         while num % i == 0 {
+        while num % i == 0 {
             primes.append(i)
             num /= i
         }
@@ -61,12 +61,12 @@ print(solution_prime_factorization(12))
 print(solution_prime_factorization(17))
 print("=================================================")
 /*
-[ 컨트롤 제트 ]
+ [ 컨트롤 제트 ]
  
  숫자와 "Z"가 공백으로 구분되어 담긴 문자열이 주어집니다. 문자열에 있는 숫자를 차례대로 더하려고 합니다.
  이 때 "Z"가 나오면 바로 전에 더했던 숫자를 뺀다는 뜻입니다.
  숫자와 "Z"로 이루어진 문자열 s가 주어질 때, 머쓱이가 구한 값을 return 하도록 solution 함수를 완성해보세요.
-
+ 
  입출력 예 #2
  10 + 20 + 30 + 40 = 100을 return 합니다.
  
@@ -78,7 +78,7 @@ func solution_control_z(_ s:String) -> Int {
     
     let array = s.components(separatedBy: " ")
     var result = 0
-
+    
     for i in 0..<array.count {
         if array[i] != "Z" {
             result += Int(array[i])!
@@ -179,7 +179,7 @@ print("=================================================")
  문자열 my_string이 매개변수로 주어집니다.
  my_string은 소문자, 대문자, 자연수로만 구성되어있습니다.
  my_string안의 자연수들의 합을 return하도록 solution 함수를 완성해주세요.
-
+ 
  연속된 수는 하나의 숫자로 간주합니다.
  
  입출력 예
@@ -218,7 +218,7 @@ print("=================================================")
 
 /*
  [ 영어가 싫어요 ]
-
+ 
  영어가 싫은 머쓱이는 영어로 표기되어있는 숫자를 수로 바꾸려고 합니다.
  문자열 numbers가 매개변수로 주어질 때, numbers를 정수로 바꿔 return 하도록 solution 함수를 완성해 주세요.
  
@@ -243,16 +243,16 @@ print(solution_en_to_num("onefourzerosixseven"))
 print("=================================================")
 
 /*
-<<<<<<< HEAD
+ <<<<<<< HEAD
  [ 삼각혁의 완성조건 (2) ]
  
  선분 세 개로 삼각형을 만들기 위해서는 다음과 같은 조건을 만족해야 합니다.
-
+ 
  가장 긴 변의 길이는 다른 두 변의 길이의 합보다 작아야 합니다.
  삼각형의 두 변의 길이가 담긴 배열 sides이 매개변수로 주어집니다. 나머지 한 변이 될 수 있는 정수의 개수를 return하도록 solution 함수를 완성해주세요.
-
+ 
  선분 세 개로 삼각형을 만들기 위해서는 다음과 같은 조건을 만족해야 합니다.
-
+ 
  입출력 예
  sides    result
  [1, 2]    1
@@ -265,7 +265,7 @@ func solution_triangle2(_ sides:[Int]) -> Int {
     let a = sides[0]
     let b = sides[1]
     let sum = a + b
-
+    
     let max = a < b ? b : a
     let min = a < b ? a : b
     
@@ -276,12 +276,12 @@ func solution_triangle2(_ sides:[Int]) -> Int {
             result += 1
         }
     }
-
+    
     // case2. 한 변이 나머지 한 변일 때
     for _ in max..<sum {
         result += 1
     }
-
+    
     return result
 }
 
@@ -292,9 +292,9 @@ print(solution_triangle2([11, 7]))
 
 /*
  [ 문자열 계산하기 ]
-
+ 
  my_string은 "3 + 5"처럼 문자열로 된 수식입니다. 문자열 my_string이 매개변수로 주어질 때, 수식을 계산한 값을 return 하는 solution 함수를 완성해주세요.
-
+ 
  입출력 예
  my_string    result
  "3 + 4"    7
@@ -319,9 +319,9 @@ print("=================================================")
 
 /*
  [ OX퀴즈 ]
-
+ 
  덧셈, 뺄셈 수식들이 'X [연산자] Y = Z' 형태로 들어있는 문자열 배열 quiz가 매개변수로 주어집니다. 수식이 옳다면 "O"를 틀리다면 "X"를 순서대로 담은 배열을 return하도록 solution 함수를 완성해주세요.
-
+ 
  입출력 예
  quiz    result
  ["3 - 4 = -3", "5 + 6 = 11"]    ["X", "O"]
@@ -333,7 +333,7 @@ func solution_OX_quiz(_ quiz:[String]) -> [String] {
     for item in quiz {
         let arr = item.split(separator: " ")
         var cal = 0
-
+        
         if arr[1] == "+" {
             cal = Int(arr[0])! + Int(arr[2])!
         } else {
@@ -354,9 +354,9 @@ print("=================================================")
 
 /*
  [ 잘라서 배열로 저장하기 ]
-
+ 
  문자열 my_str과 n이 매개변수로 주어질 때, my_str을 길이 n씩 잘라서 저장한 배열을 return하도록 solution 함수를 완성해주세요.
-
+ 
  입출력 예
  my_str    n    result
  "abc1Addfggg4556b"    6    ["abc1Ad", "dfggg4", "556b"]
@@ -364,23 +364,23 @@ print("=================================================")
  */
 
 func solution_n_cut_array(_ my_str:String, _ n:Int) -> [String] {
-      var arr = [String]()
-      var str = ""
-      
-      for i in my_str.enumerated() {
-
-          if i.offset % n == 0 && i.offset != 0{
-              arr.append(str)
-              str = ""
-          }
-          str += String(i.element)
-          
-          if my_str.count - 1 == i.offset {
-              arr.append(str)
-          }
-
-      }
-      return arr
+    var arr = [String]()
+    var str = ""
+    
+    for i in my_str.enumerated() {
+        
+        if i.offset % n == 0 && i.offset != 0{
+            arr.append(str)
+            str = ""
+        }
+        str += String(i.element)
+        
+        if my_str.count - 1 == i.offset {
+            arr.append(str)
+        }
+        
+    }
+    return arr
 }
 
 print(solution_n_cut_array("abc1Addfggg4556b", 6))
@@ -388,7 +388,7 @@ print("=================================================")
 
 /*
  [ 직사각형 넓이 구하기 ]
-
+ 
  2차원 좌표 평면에 변이 축과 평행한 직사각형이 있습니다. 직사각형 네 꼭짓점의 좌표 [[x1, y1], [x2, y2], [x3, y3], [x4, y4]]가 담겨있는 배열 dots가 매개변수로 주어질 때, 직사각형의 넓이를 return 하도록 solution 함수를 완성해보세요.
  
  입출력 예
@@ -421,7 +421,7 @@ print("=================================================")
  [ 캐릭터의 좌표 ]
  
  머쓱이는 RPG게임을 하고 있습니다. 게임에는 up, down, left, right 방향키가 있으며 각 키를 누르면 위, 아래, 왼쪽, 오른쪽으로 한 칸씩 이동합니다. 예를 들어 [0,0]에서 up을 누른다면 캐릭터의 좌표는 [0, 1], down을 누른다면 [0, -1], left를 누른다면 [-1, 0], right를 누른다면 [1, 0]입니다. 머쓱이가 입력한 방향키의 배열 keyinput와 맵의 크기 board이 매개변수로 주어집니다. 캐릭터는 항상 [0,0]에서 시작할 때 키 입력이 모두 끝난 뒤에 캐릭터의 좌표 [x, y]를 return하도록 solution 함수를 완성해주세요.
-
+ 
  [0, 0]은 board의 정 중앙에 위치합니다. 예를 들어 board의 가로 크기가 9라면 캐릭터는 왼쪽으로 최대 [-4, 0]까지 오른쪽으로 최대 [4, 0]까지 이동할 수 있습니다.
  
  입출력 예
@@ -579,10 +579,10 @@ func solution_spell_dic(_ spell:[String], _ dic:[String]) -> Int {
     }
     return 2
     
-  /*
-    func solution(_ spell: [String], _ dic: [String]) -> Int {
-    dic.map { String($0.sorted()) }.contains(spell.sorted().joined()) ? 1 : 2 }
-   */
+    /*
+     func solution(_ spell: [String], _ dic: [String]) -> Int {
+     dic.map { String($0.sorted()) }.contains(spell.sorted().joined()) ? 1 : 2 }
+     */
 }
 
 print(solution_spell_dic( ["z", "d", "x"], ["def", "dww", "dzx", "loveaw"]))
@@ -603,10 +603,10 @@ print("=================================================")
  */
 
 func solution_cut_paper(_ M:Int, _ N:Int) -> Int {
-//    let max = M <= N ? M : N
-//    let min = M <= N ? N : M
-//
-//    return (max - 1) + (max * (min - 1))
+    //    let max = M <= N ? M : N
+    //    let min = M <= N ? N : M
+    //
+    //    return (max - 1) + (max * (min - 1))
     // m - 1 + mn - m  = nm - 1
     return M * N - 1
 }
@@ -620,12 +620,12 @@ print("=================================================")
  [ 로그인 성공? ]
  
  머쓱이는 프로그래머스에 로그인하려고 합니다. 머쓱이가 입력한 아이디와 패스워드가 담긴 배열 id_pw와 회원들의 정보가 담긴 2차원 배열 db가 주어질 때, 다음과 같이 로그인 성공, 실패에 따른 메시지를 return하도록 solution 함수를 완성해주세요.
-
+ 
  아이디와 비밀번호가 모두 일치하는 회원정보가 있으면 "login"을 return합니다.
  로그인이 실패했을 때 아이디가 일치하는 회원이 없다면 “fail”를, 아이디는 일치하지만 비밀번호가 일치하는 회원이 없다면 “wrong pw”를 return 합니다.
  
  회원들의 아이디는 같을 수 있지만 아이디는 같을 수 없다
-
+ 
  입출력 예
  id_pw    db    result
  ["meosseugi", "1234"]    [["rardss", "123"], ["yyoom", "1234"], ["meosseugi", "1234"]]    "login"
@@ -671,7 +671,7 @@ print("=================================================")
  "apple"    "elppa"    -1
  "atat"    "tata"    1
  "abc"    "abc"    0
-
+ 
  https://school.programmers.co.kr/learn/courses/30/lessons/120921
  */
 
@@ -727,7 +727,7 @@ print("=================================================")
  [ 유한소수 판별하기 ]
  
  소수점 아래 숫자가 계속되지 않고 유한개인 소수를 유한소수라고 합니다. 분수를 소수로 고칠 때 유한소수로 나타낼 수 있는 분수인지 판별하려고 합니다. 유한소수가 되기 위한 분수의 조건은 다음과 같습니다.
-
+ 
  기약분수로 나타내었을 때, 분모의 소인수가 2와 5만 존재해야 합니다.
  두 정수 a와 b가 매개변수로 주어질 때, a/b가 유한소수이면 1을, 무한소수라면 2를 return하도록 solution 함수를 완성해주세요.
  
@@ -751,11 +751,11 @@ func solution_finite_decimal(_ a:Int, _ b:Int) -> Int {
     var primes = [Int]()
     var num = denominator
     for i in 2...denominator {
-         while num % i == 0 {
-             primes.append(i)
-             if i != 2 && i != 5 {
-                 return 2
-             }
+        while num % i == 0 {
+            primes.append(i)
+            if i != 2 && i != 5 {
+                return 2
+            }
             num /= i
         }
     }
@@ -776,9 +776,57 @@ print(solution_finite_decimal(12, 21))
 print(solution_finite_decimal(3500, 500))
 print("=================================================")
 
-// 20, 5의 최대공약수는 = 5
+/*
+ [ 등수 매기기 ]
+ 
+ 영어 점수와 수학 점수의 평균 점수를 기준으로 학생들의 등수를 매기려고 합니다. 영어 점수와 수학 점수를 담은 2차원 정수 배열 score가 주어질 때, 영어 점수와 수학 점수의 평균을 기준으로 매긴 등수를 담은 배열을 return하도록 solution 함수를 완성해주세요.
+ 
+ 입출력 예
+ score    result
+ [[80, 70], [90, 50], [40, 70], [50, 80]]    [1, 2, 4, 3]
+ [[80, 70], [70, 80], [30, 50], [90, 100], [100, 90], [100, 100], [10, 30]]    [4, 4, 6, 2, 2, 1, 7]
+ https://school.programmers.co.kr/learn/courses/30/lessons/120882
+ */
+
+func solution_ranking(_ score:[[Int]]) -> [Int] {
+    var arr = [Float]()
+    var result = Array(repeating: 10, count: score.count)
+    for item in score {
+        arr.append(Float(item[0] + item[1]) / Float(2))
+    }
+    let set = Array(Set(arr).sorted(by: {$0 > $1}))
+    
+    var j = 1
+    for i in 0..<set.count {
+        let count = arr.filter{$0 == set[i]}.count
+        for _ in 0..<count {
+            let index = arr.firstIndex(of: set[i])!
+            arr[index] = 0
+            result[index] = j
+        }
+        j += count
+    }
+    
+    return result
+    /*
+     다른사람 풀이
+     var answer: [Int] = []
+        let total = score.map { $0.reduce(0, +) }
+        for tmp in total {
+            answer.append(total.filter { $0 > tmp }.count + 1)
+        }
+
+        return answer
+     // 평균이라고 무조건 나눠야한다고 틀에박힌 생각.... 안나누고 전체값으로 비교했으면 좋았을걸..
+     */
+}
+
+// testcase 7, 10 실패
+print(solution_ranking([[1, 1], [1, 1], [1, 1], [1, 2], [1, 1]]))
+print(solution_ranking([[1, 1], [1, 1], [1, 1], [1, 1], [1, 1]]))
+print(solution_ranking([[1, 3], [3, 1], [3, 1], [3, 2], [1, 2], [0, 0]]))
+print(solution_ranking([[80, 70], [90, 50], [40, 70], [50, 80]]))
+print(solution_ranking([[80, 70], [70, 80], [30, 50], [90, 100], [100, 90], [100, 100], [10, 30]]))
+print("=================================================")
 
 
-//finite decimal
-//
-//numerator denominator
