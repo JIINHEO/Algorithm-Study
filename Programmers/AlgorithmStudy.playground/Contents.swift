@@ -886,11 +886,43 @@ func solution_unusal_sort(_ numlist:[Int], _ n:Int) -> [Int] {
              let b = abs($1 - n)
 
              return a == b ? $0 > $1 : a < b
-         } 
+         }
      */
 }
 
 
 print(solution_unusal_sort([1, 2, 3, 4, 5, 6], 4))
 print(solution_unusal_sort([10000,20,36,47,40,6,10,7000], 30))
+print("=================================================")
+
+/*
+ [ 저주의 숫자 3]
+ 
+ 3x 마을 사람들은 3을 저주의 숫자라고 생각하기 때문에 3의 배수와 숫자 3을 사용하지 않습니다. 3x 마을 사람들의 숫자는 다음과 같습니다.
+ 
+ 입출력 예
+ n    result
+ 15    25
+ 40    76
+ https://school.programmers.co.kr/learn/courses/30/lessons/120871
+ */
+
+func solution_death_number_3(_ n:Int) -> Int {
+    
+    var count = 0
+    var i = 0
+    var result = 0
+    
+    while count < n {
+        i += 1
+        if i % 3 != 0 && !String(i).contains("3") {
+            count += 1
+        }
+        result = i
+    }
+    return result
+}
+
+print(solution_death_number_3(15))
+print(solution_death_number_3(40))
 print("=================================================")
