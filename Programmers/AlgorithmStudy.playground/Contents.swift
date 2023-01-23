@@ -926,3 +926,34 @@ func solution_death_number_3(_ n:Int) -> Int {
 print(solution_death_number_3(15))
 print(solution_death_number_3(40))
 print("=================================================")
+
+/*
+ [ 연속된 수의 합 ]
+ 
+ 연속된 세 개의 정수를 더해 12가 되는 경우는 3, 4, 5입니다. 두 정수 num과 total이 주어집니다. 연속된 수 num개를 더한 값이 total이 될 때, 정수 배열을 오름차순으로 담아 return하도록 solution함수를 완성해보세요.
+ 
+ 입출력 예
+ num    total    result
+ 3    12    [3, 4, 5]
+ 5    15    [1, 2, 3, 4, 5]
+ 4    14    [2, 3, 4, 5]
+ 5    5    [-1, 0, 1, 2, 3]
+ https://school.programmers.co.kr/learn/courses/30/lessons/120923
+ */
+
+func solution_sequence_num_sum(_ num:Int, _ total:Int) -> [Int] {
+    var total = total
+    var arr = [Int]()
+    
+    for i in 1...num {
+        total -= i
+        arr.append(i)
+    }
+    return arr.map { $0 + (total / num)}
+}
+
+print(solution_sequence_num_sum(3, 12)) // 3, 4, 5
+print(solution_sequence_num_sum(5, 15)) // 1, 2, 3, 4, 5
+print(solution_sequence_num_sum(4, 14)) // 2, 3, 4, 5
+print(solution_sequence_num_sum(5, 5)) // -1, 0, 1, 2, 3
+print("=================================================")
