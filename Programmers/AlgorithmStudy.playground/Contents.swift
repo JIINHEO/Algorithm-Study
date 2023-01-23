@@ -657,5 +657,41 @@ func solution_login_true_or_false(_ id_pw:[String], _ db:[[String]]) -> String {
 
 print(solution_login_true_or_false(["meosseugi", "1234"], [["rardss", "123"], ["yyoom", "1234"], ["meosseugi", "1234"]]))
 print(solution_login_true_or_false(["rabbit04", "98761"], [["jaja11", "98761"], ["krong0313", "29440"], ["rabbit00", "111333"]]))
+print("=================================================")
 
 
+/*
+ [ 문자열 밀기 ]
+ 
+ 문자열 "hello"에서 각 문자를 오른쪽으로 한 칸씩 밀고 마지막 문자는 맨 앞으로 이동시키면 "ohell"이 됩니다. 이것을 문자열을 민다고 정의한다면 문자열 A와 B가 매개변수로 주어질 때, A를 밀어서 B가 될 수 있다면 밀어야 하는 최소 횟수를 return하고 밀어서 B가 될 수 없으면 -1을 return 하도록 solution 함수를 완성해보세요.
+ 
+ 입출력 예
+ A    B    result
+ "hello"    "ohell"    1
+ "apple"    "elppa"    -1
+ "atat"    "tata"    1
+ "abc"    "abc"    0
+
+ https://school.programmers.co.kr/learn/courses/30/lessons/120921
+ */
+
+func solution_push_string(_ A:String, _ B:String) -> Int {
+    if A == B {
+        return 0
+    }
+    
+    let str = B + B
+    if str.contains(A) {
+        let arr = str.components(separatedBy: A)
+        return arr[0].count
+    }
+    return -1
+}
+
+print(solution_push_string("hello", "ohell"))
+print(solution_push_string("hello", "elloh")) //testcase 7
+print(solution_push_string("apple", "elppa"))
+print(solution_push_string("atat", "tata"))
+print(solution_push_string("abc", "abc"))
+print(solution_push_string("asgwrfer2", "fer2asgwr"))
+print("=================================================")
