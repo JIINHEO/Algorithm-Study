@@ -1000,3 +1000,59 @@ print(solution_overlab_line([[0, 1], [2, 5], [3, 9]]))
 print(solution_overlab_line([[-1, 1], [1, 3], [3, 9]]))
 print(solution_overlab_line([[0, 5], [3, 9], [1, 10]]))
 print("=================================================")
+
+/*
+[ 평행 ]
+
+ 점 네 개의 좌표를 담은 이차원 배열  dots가 다음과 같이 매개변수로 주어집니다.
+
+ [[x1, y1], [x2, y2], [x3, y3], [x4, y4]]
+ 주어진 네 개의 점을 두 개씩 이었을 때, 두 직선이 평행이 되는 경우가 있으면 1을 없으면 0을 return 하도록 solution 함수를 완성해보세요.
+
+ 입출력 예
+ dots    result
+ [[1, 4], [9, 2], [3, 8], [11, 6]]    1
+ [[3, 5], [4, 1], [2, 4], [5, 10]]    0
+ */
+
+//function solution(dots) {
+//    const leanArr = []
+//    // dots의 길이만큼 반복
+//    for(let i = 0 ; i < dots.length ; i ++) {
+//        // i번째를 제외한 그 다음부터 반복
+//        for(let j = i+1 ; j < dots.length ; j ++) {
+//            // y좌표의 차이 / x좌표의 차이 = 기울기
+//            const curLean = (dots[i][1]-dots[j][1]) / (dots[i][0]-dots[j][0])
+//            // 기울기가 같다면 평행
+//            if(leanArr.includes(curLean)) return 1
+//            leanArr.push(curLean)
+//        }
+//    }
+//    return 0
+//}
+
+func solution_parallel(_ dots:[[Int]]) -> Int {
+    var arr: [Double] = []
+    for i in 0...2 {
+        for j in i+1...3 {
+            let slope = calcSlope(dots[i], dots[j])
+            
+            if arr.contains(slope) {
+                return 1
+            } else {
+                arr.append(slope)
+            }
+        }
+    }
+    return 0
+}
+
+func calcSlope(_ first: [Int], _ second: [Int]) -> Double {
+    return (Double(second[1]-first[1])/Double(second[0]-first[0]))
+}
+
+//print(solution_parallel([[1, 4], [9, 2], [3, 8], [11, 6]])) // 1
+//print(solution_parallel([[3, 5], [4, 1], [2, 4], [5, 10]])) // 0
+print(solution_parallel([[1,5],[1,4],[2,6],[2,9]])) // 1
+print(solution_parallel([[1,5],[1,4],[2,9],[2,6]])) // 1
+print("=================================================")
