@@ -1000,3 +1000,62 @@ print(solution_overlab_line([[0, 1], [2, 5], [3, 9]]))
 print(solution_overlab_line([[-1, 1], [1, 3], [3, 9]]))
 print(solution_overlab_line([[0, 5], [3, 9], [1, 10]]))
 print("=================================================")
+
+/*
+ [ 안전지대 ]
+ 
+ 다음 그림과 같이 지뢰가 있는 지역과 지뢰에 인접한 위, 아래, 좌, 우 대각선 칸을 모두 위험지역으로 분류합니다.
+ 지뢰는 2차원 배열 board에 1로 표시되어 있고 board에는 지뢰가 매설 된 지역 1과, 지뢰가 없는 지역 0만 존재합니다.
+ 지뢰가 매설된 지역의 지도 board가 매개변수로 주어질 때, 안전한 지역의 칸 수를 return하도록 solution 함수를 완성해주세요.
+
+ 입출력 예
+ board    result
+ [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 0, 0]]    16
+ [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 1, 1, 0], [0, 0, 0, 0, 0]]    13
+ [[1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]]    0
+ https://school.programmers.co.kr/learn/courses/30/lessons/120866
+ */
+
+func solution_safe_area(_ board:[[Int]]) -> Int {
+
+    var board = board
+    
+    let dx = [-1, 1, 0, 0, -1, -1, 1, 1]
+    let dy = [0, 0, -1, 1, -1, 1, -1, 1]
+    
+    var boom = [(Int, Int)]()
+    
+    for i in 0..<board.count {
+        for j in 0..<board[i].count {
+            if board[i][j] == 1 {
+                boom.append((i, j))
+            }
+        }
+    }
+
+    for (i, j) in boom {
+        for k in 0..<8 {
+            let x = i + dx[k]
+            let y = j + dy[k]
+            if (0 <= x && x < board.count && 0 <= y && y < board.count) {
+                board[x][y] = 1
+            }
+        }
+    }
+    var count = 0
+    for i in board {
+        for j in i {
+            if (j == 0) {
+                count += 1
+            }
+        }
+    }
+    
+    return count
+}
+
+print(solution_safe_area( [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 0, 0]] ))
+print(solution_safe_area( [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 1, 1, 0], [0, 0, 0, 0, 0]] ))
+print(solution_safe_area( [[1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]] ))
+print("=================================================")
+
