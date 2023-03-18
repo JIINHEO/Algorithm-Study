@@ -243,7 +243,7 @@ print(solution_en_to_num("onefourzerosixseven"))
 print("=================================================")
 
 /*
-
+ <<<<<<< HEAD
  [ 삼각혁의 완성조건 (2) ]
  
  선분 세 개로 삼각형을 만들기 위해서는 다음과 같은 조건을 만족해야 합니다.
@@ -1002,62 +1002,6 @@ print(solution_overlab_line([[0, 5], [3, 9], [1, 10]]))
 print("=================================================")
 
 /*
-[ 평행 ]
-
- 점 네 개의 좌표를 담은 이차원 배열  dots가 다음과 같이 매개변수로 주어집니다.
-
- [[x1, y1], [x2, y2], [x3, y3], [x4, y4]]
- 주어진 네 개의 점을 두 개씩 이었을 때, 두 직선이 평행이 되는 경우가 있으면 1을 없으면 0을 return 하도록 solution 함수를 완성해보세요.
-
- 입출력 예
- dots    result
- [[1, 4], [9, 2], [3, 8], [11, 6]]    1
- [[3, 5], [4, 1], [2, 4], [5, 10]]    0
- */
-
-//function solution(dots) {
-//    const leanArr = []
-//    // dots의 길이만큼 반복
-//    for(let i = 0 ; i < dots.length ; i ++) {
-//        // i번째를 제외한 그 다음부터 반복
-//        for(let j = i+1 ; j < dots.length ; j ++) {
-//            // y좌표의 차이 / x좌표의 차이 = 기울기
-//            const curLean = (dots[i][1]-dots[j][1]) / (dots[i][0]-dots[j][0])
-//            // 기울기가 같다면 평행
-//            if(leanArr.includes(curLean)) return 1
-//            leanArr.push(curLean)
-//        }
-//    }
-//    return 0
-//}
-
-func solution_parallel(_ dots:[[Int]]) -> Int {
-    var arr: [Double] = []
-    for i in 0...2 {
-        for j in i+1...3 {
-            let slope = calcSlope(dots[i], dots[j])
-            
-            if arr.contains(slope) {
-                return 1
-            } else {
-                arr.append(slope)
-            }
-        }
-    }
-    return 0
-}
-
-func calcSlope(_ first: [Int], _ second: [Int]) -> Double {
-    return (Double(second[1]-first[1])/Double(second[0]-first[0]))
-}
-
-//print(solution_parallel([[1, 4], [9, 2], [3, 8], [11, 6]])) // 1
-//print(solution_parallel([[3, 5], [4, 1], [2, 4], [5, 10]])) // 0
-print(solution_parallel([[1,5],[1,4],[2,6],[2,9]])) // 1
-print(solution_parallel([[1,5],[1,4],[2,9],[2,6]])) // 1
-print("=================================================")
-
-/*
  [ 안전지대 ]
  
  다음 그림과 같이 지뢰가 있는 지역과 지뢰에 인접한 위, 아래, 좌, 우 대각선 칸을 모두 위험지역으로 분류합니다.
@@ -1115,83 +1059,58 @@ print(solution_safe_area( [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [0
 print(solution_safe_area( [[1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1]] ))
 print("=================================================")
 
+
 /*
- [ 올바른 괄호 ] 스택/큐
- 문제 설명
- 괄호가 바르게 짝지어졌다는 것은 '(' 문자로 열렸으면 반드시 짝지어서 ')' 문자로 닫혀야 한다는 뜻입니다. 예를 들어
-
- "()()" 또는 "(())()" 는 올바른 괄호입니다.
- ")()(" 또는 "(()(" 는 올바르지 않은 괄호입니다.
- '(' 또는 ')' 로만 이루어진 문자열 s가 주어졌을 때, 문자열 s가 올바른 괄호이면 true를 return 하고, 올바르지 않은 괄호이면 false를 return 하는 solution 함수를 완성해 주세요.
-
- 입출력 예
- s    answer
- "()()"    true
- "(())()"    true
- ")()("    false
- "(()("    false
+ 입국심사
  
- https://school.programmers.co.kr/learn/courses/30/lessons/12909
+ 문제 설명
+ n명이 입국심사를 위해 줄을 서서 기다리고 있습니다. 각 입국심사대에 있는 심사관마다 심사하는데 걸리는 시간은 다릅니다.
+
+ 처음에 모든 심사대는 비어있습니다. 한 심사대에서는 동시에 한 명만 심사를 할 수 있습니다.
+ 가장 앞에 서 있는 사람은 비어 있는 심사대로 가서 심사를 받을 수 있습니다. 하지만 더 빨리 끝나는 심사대가 있으면 기다렸다가 그곳으로 가서 심사를 받을 수도 있습니다.
+
+ 모든 사람이 심사를 받는데 걸리는 시간을 최소로 하고 싶습니다.
+
+ 입국심사를 기다리는 사람 수 n, 각 심사관이 한 명을 심사하는데 걸리는 시간이 담긴 배열 times가 매개변수로 주어질 때,
+ 모든 사람이 심사를 받는데 걸리는 시간의 최솟값을 return 하도록 solution 함수를 작성해주세요.
+
+ 
+ 입출력 예
+ n    times    return
+ 6    [7, 10]    28
+
+ https://school.programmers.co.kr/learn/courses/30/lessons/43238?language=swift
  */
 
-func solution_braket(_ s:String) -> Bool
-{
-    let arr = Array(s)
-    var newArr = [Character]()
+func solution_immgration(_ n:Int, _ times:[Int]) -> Int64 {
     
-    if arr.first == ")" {
-        return false
+    func isPossible(answer: Int64) -> Bool {
+        var num = n
+        
+        for i in times {
+            num -= Int(Int(answer) / i)
+        }
+        
+        return num <= 0
     }
     
-    for i in arr {
-        if i == "(" {
-            newArr.append(i)
+    let max = 1000_000_000
+    
+    var left: Int64 = 1  // (max * max)
+    var right: Int64 = Int64(max * max) // 답으로 나올 수 있는 최대값
+    
+    while (left < right) {
+        var mid = Int64((left + right) / 2)
+        
+        if (isPossible(answer: mid)) {
+            right = Int64(mid)
         } else {
-            if newArr.count == 0 {
-                return false
-            }
-            newArr.removeLast()
+            left = Int64(mid + 1)
         }
     }
-
-    return  newArr.count == 0 ? true : false
-}
-
-print(solution_braket("()()"))
-print(solution_braket("(())()"))
-print(solution_braket(")()("))
-print("=================================================")
-
-/*
- [ 가장 큰 수 ]
- 
- 0 또는 양의 정수가 주어졌을 때, 정수를 이어 붙여 만들 수 있는 가장 큰 수를 알아내 주세요.
-
- 예를 들어, 주어진 정수가 [6, 10, 2]라면 [6102, 6210, 1062, 1026, 2610, 2106]를 만들 수 있고, 이중 가장 큰 수는 6210입니다.
-
- 0 또는 양의 정수가 담긴 배열 numbers가 매개변수로 주어질 때, 순서를 재배치하여 만들 수 있는 가장 큰 수를 문자열로 바꾸어 return 하도록 solution 함수를 작성해주세요.
- 
- 입출력 예
- numbers    return
- [6, 10, 2]    "6210"
- [3, 30, 34, 5, 9]    "9534330"
- 
- https://school.programmers.co.kr/learn/courses/30/lessons/42746?language=swift
- */
-
-func solution_max_num(_ numbers:[Int]) -> String {
     
-    if numbers.sorted().last == 0 {
-        return "0"
-    } else {
-        let arrSort = numbers.sorted { $0 > $1 }.map{ String($0) }
-        let arr = arrSort.sorted{ Int("\($0)\($1)")! > Int("\($1)\($0)")! }
-        return arr.joined()
-    }
+    return Int64(left)
 }
 
-print(solution_max_num([6, 10, 2]))
-print(solution_max_num([3, 30, 34, 5, 9]))
-print(solution_max_num([1, 10, 100, 1000, 818, 81, 898, 89, 0, 0]))
-print(solution_max_num([12, 1213]))
+print(solution_immgration(6, [7,10])) // result: 28
 print("=================================================")
