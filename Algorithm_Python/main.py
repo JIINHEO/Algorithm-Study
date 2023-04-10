@@ -1,5 +1,3 @@
-import Programmers.lv1_내적
-
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
@@ -9,8 +7,17 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
+# import Programmers.lv1_약수의개수와덧셈
+#
+# print(Programmers.lv1_약수의개수와덧셈.solution(13, 17))
 
+# import Programmers.lv1_3진법뒤집기
+#
+# print(Programmers.lv1_3진법뒤집기.solution(45))
 
-print(Programmers.lv1_내적.solution([1,2,3,4], [-3,-1,0,2]))
+# import Programmers.lv1_크기가작은부분문자열
+#
+# print(Programmers.lv1_크기가작은부분문자열.solution('3141592', '271'))
 
-# print(solution_dot_product([1,2,3,4], [-3,-1,0,2]))
+import Programmers.lv1_두개뽑아서더하기
+print(Programmers.lv1_두개뽑아서더하기.solution([2, 1, 3, 4, 1]))

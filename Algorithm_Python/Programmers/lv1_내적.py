@@ -15,10 +15,10 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/70128
 
 def solution(a, b):
-    answer = 1234567890
-    #
-    # for a1, b1 in zip(a, b):
-    #     answer += a1 * b1
+    answer = 0
+
+    for a1, b1 in zip(a, b):
+        answer += a1 * b1
 
     return answer
 
