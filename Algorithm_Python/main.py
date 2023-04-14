@@ -7,6 +7,32 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
+import Programmers.lv1_성격유형검사하기_카카오테크인턴십
+# print(Programmers.lv1_성격유형검사하기_카카오테크인턴십.solution(["AN", "CF", "MJ", "RT", "NA"], 	[5, 3, 2, 7, 5]))
+print(Programmers.lv1_성격유형검사하기_카카오테크인턴십.solution(["TR", "RT", "TR"], 	[7, 1, 3]))
+
+# import Programmers.lv1_신규아이디추천_카카오블라인드채용r
+# print(Programmers.lv1_신규아이디추천_카카오블라인드채용.solution("...!@BaT#*..y.abcdefghijklm"))
+
+# import Programmers.lv1_크레인인형뽑기게임_2019카카오겨울인턴
+# print(Programmers.lv1_크레인인형뽑기게임_2019카카오겨울인턴.solution([[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]],[1,5,3,5,1,2,1,4]))
+# print(Programmers.lv1_크레인인형뽑기게임_2019카카오겨울인턴.solution([[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0],[0,0,0,0,0]],[1,5,3,5,1,2,1,4]))
+
+# import Programmers.lv1_1차다트게임
+# print(Programmers.lv1_1차다트게임.solution("1S*2T*3S"))
+
+# import Programmers.lv1_추억점수
+# print(Programmers.lv1_추억점수.solution(["may", "kein", "kain", "radi"], [5, 10, 1, 3], [["may", "kein", "kain", "radi"],["may", "kein", "brin", "deny"], ["kon", "kain", "may", "coni"]]))
+
+# import Programmers.lv1_명예의전당1
+# print(Programmers.lv1_명예의전당1.solution(3, [10, 100, 20, 150, 1, 100, 200]))
+
+# import Programmers.lv1_과일장수
+# print(Programmers.lv1_과일장수.solution(4, 3, [4, 1, 2, 2, 4, 4, 4, 4, 1, 2, 4, 2]))
+
+# import Programmers.lv1_폰켓몬
+# print(Programmers.lv1_폰켓몬.solution([3,1,2,3]))
+
 # import Programmers.lv1_약수의개수와덧셈
 # print(Programmers.lv1_약수의개수와덧셈.solution(13, 17))
 
@@ -31,5 +57,5 @@ if __name__ == '__main__':
 # import Programmers.lv1_숫자문자열과영단어
 # print(Programmers.lv1_숫자문자열과영단어.solution("2three45sixseven"))
 
-import Programmers.lv1_소수찾기
-print(Programmers.lv1_소수찾기.solution(1000000))
+# import Programmers.lv1_소수찾기
+# print(Programmers.lv1_소수찾기.solution(1000000))
