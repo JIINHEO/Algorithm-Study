@@ -7,12 +7,29 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
-import Programmers.lv1_성격유형검사하기_카카오테크인턴십
-# print(Programmers.lv1_성격유형검사하기_카카오테크인턴십.solution(["AN", "CF", "MJ", "RT", "NA"], 	[5, 3, 2, 7, 5]))
-print(Programmers.lv1_성격유형검사하기_카카오테크인턴십.solution(["TR", "RT", "TR"], 	[7, 1, 3]))
+import Programmers.lv2_전화번호목록
+print(Programmers.lv2_전화번호목록.solution(["119", "97674223", "1195524421"]))
+print(Programmers.lv2_전화번호목록.solution(["12","23123"]))
+print(Programmers.lv2_전화번호목록.solution(["12"]))
+print(Programmers.lv2_전화번호목록.solution(["123","456","789"]))
+print(Programmers.lv2_전화번호목록.solution(["11","1","11"]))
+print(Programmers.lv2_전화번호목록.solution(["88","12","123","1235","567"] ))
 
-# import Programmers.lv1_신규아이디추천_카카오블라인드채용r
-# print(Programmers.lv1_신규아이디추천_카카오블라인드채용.solution("...!@BaT#*..y.abcdefghijklm"))
+# import Programmers.lv1_개인정보수집유효기간_카카오블라인드채용
+# print(Programmers.lv1_개인정보수집유효기간_카카오블라인드채용.solution("2022.05.19"	,["A 6", "B 12", "C 3"]	,["2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"]))
+# print(Programmers.lv1_개인정보수집유효기간_카카오블라인드채용.solution("2020.01.01",["Z 3", "D 5"],	["2019.01.01 D", "2019.11.15 Z", "2019.08.02 D", "2019.07.01 D", "2018.12.28 Z"]))
+
+# import Programmers.lv1_성격유형검사하기_카카오테크인턴십
+# print(Programmers.lv1_성격유형검사하기_카카오테크인턴십.solution(["AN", "CF", "MJ", "RT", "NA"], 	[5, 3, 2, 7, 5]))
+# print(Programmers.lv1_성격유형검사하기_카카오테크인턴십.solution(["TR", "RT", "TR"], 	[7, 1, 3]))
+
+import Programmers.lv1_신규아이디추천_카카오블라인드채용
+# print(Programmers.lv1_신규아이디추천_카카오블라인드채용.solution("abcdefghijklmn.p"))
+# print(Programmers.lv1_신규아이디추천_카카오블라인드채용.solution("z-+.^."))
+# print(Programmers.lv1_신규아이디추천_카카오블라인드채용.solution("=.="))
+# print(Programmers.lv1_신규아이디추천_카카오블라인드채용.solution("123_.def"))
+# print(Programmers.lv1_신규아이디추천_카카오블라인드채용.solution("........."))
+# print(Programmers.lv1_신규아이디추천_카카오블라인드채용.solution("12"))
 
 # import Programmers.lv1_크레인인형뽑기게임_2019카카오겨울인턴
 # print(Programmers.lv1_크레인인형뽑기게임_2019카카오겨울인턴.solution([[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]],[1,5,3,5,1,2,1,4]))
