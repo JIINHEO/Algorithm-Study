@@ -7,13 +7,16 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
-import Programmers.lv2_전화번호목록
-print(Programmers.lv2_전화번호목록.solution(["119", "97674223", "1195524421"]))
-print(Programmers.lv2_전화번호목록.solution(["12","23123"]))
-print(Programmers.lv2_전화번호목록.solution(["12"]))
-print(Programmers.lv2_전화번호목록.solution(["123","456","789"]))
-print(Programmers.lv2_전화번호목록.solution(["11","1","11"]))
-print(Programmers.lv2_전화번호목록.solution(["88","12","123","1235","567"] ))
+import Programmers.lv1_카드뭉치
+print(Programmers.lv1_카드뭉치.solution(["i", "drink", "water"],["want", "to"],["i", "want", "to", "drink", "water"]))
+
+# import Programmers.lv2_전화번호목록
+# print(Programmers.lv2_전화번호목록.solution(["119", "97674223", "1195524421"]))
+# print(Programmers.lv2_전화번호목록.solution(["12","23123"]))
+# print(Programmers.lv2_전화번호목록.solution(["12"]))
+# print(Programmers.lv2_전화번호목록.solution(["123","456","789"]))
+# print(Programmers.lv2_전화번호목록.solution(["11","1","11"]))
+# print(Programmers.lv2_전화번호목록.solution(["88","12","123","1235","567"] ))
 
 # import Programmers.lv1_개인정보수집유효기간_카카오블라인드채용
 # print(Programmers.lv1_개인정보수집유효기간_카카오블라인드채용.solution("2022.05.19"	,["A 6", "B 12", "C 3"]	,["2021.05.02 A", "2021.07.01 B", "2022.02.19 C", "2022.02.20 C"]))
