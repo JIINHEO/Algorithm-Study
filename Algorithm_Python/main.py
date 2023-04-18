@@ -7,8 +7,14 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
-import Programmers.lv1_카드뭉치
-print(Programmers.lv1_카드뭉치.solution(["i", "drink", "water"],["want", "to"],["i", "want", "to", "drink", "water"]))
+import Programmers.lv2_옹알이2
+print(Programmers.lv2_옹알이2.solution(["ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"]))
+print(Programmers.lv2_옹알이2.solution(["aya", "yee", "u", "maa"]))
+print(Programmers.lv2_옹알이2.solution(["ayayeye", "ayayewooma", "wooyewoo", "maa"]))
+print(Programmers.lv2_옹알이2.solution(["mama", "yeye", "woowoo", "ayaaya"]))
+
+# import Programmers.lv1_카드뭉치
+# print(Programmers.lv1_카드뭉치.solution(["i", "drink", "water"],["want", "to"],["i", "want", "to", "drink", "water"]))
 
 # import Programmers.lv2_전화번호목록
 # print(Programmers.lv2_전화번호목록.solution(["119", "97674223", "1195524421"]))
