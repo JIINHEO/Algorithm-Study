@@ -7,11 +7,17 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
-import Programmers.lv2_옹알이2
-print(Programmers.lv2_옹알이2.solution(["ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"]))
-print(Programmers.lv2_옹알이2.solution(["aya", "yee", "u", "maa"]))
-print(Programmers.lv2_옹알이2.solution(["ayayeye", "ayayewooma", "wooyewoo", "maa"]))
-print(Programmers.lv2_옹알이2.solution(["mama", "yeye", "woowoo", "ayaaya"]))
+import Programmers.lv1_로또의최고순위와최저순위
+print(Programmers.lv1_로또의최고순위와최저순위.solution([44, 1, 0, 0, 31, 25], [31, 10, 45, 1, 6, 19]))
+print(Programmers.lv1_로또의최고순위와최저순위.solution([0, 0, 0, 0, 0, 0], [38, 19, 20, 40, 15, 25]))
+print(Programmers.lv1_로또의최고순위와최저순위.solution([45, 4, 35, 20, 3, 9], [20, 9, 3, 45, 4, 35]))
+print(Programmers.lv1_로또의최고순위와최저순위.solution([1, 2, 3, 4, 5, 6],[7, 8, 9, 10, 11, 12]))
+
+# import Programmers.lv2_옹알이2
+# print(Programmers.lv2_옹알이2.solution(["ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"]))
+# print(Programmers.lv2_옹알이2.solution(["aya", "yee", "u", "maa"]))
+# print(Programmers.lv2_옹알이2.solution(["ayayeye", "ayayewooma", "wooyewoo", "maa"]))
+# print(Programmers.lv2_옹알이2.solution(["mama", "yeye", "woowoo", "ayaaya"]))
 
 # import Programmers.lv1_카드뭉치
 # print(Programmers.lv1_카드뭉치.solution(["i", "drink", "water"],["want", "to"],["i", "want", "to", "drink", "water"]))
