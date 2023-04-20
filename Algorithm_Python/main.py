@@ -7,11 +7,18 @@ def print_hi(name):
 if __name__ == '__main__':
     print_hi('PyCharm')
 
-import Programmers.lv1_로또의최고순위와최저순위
-print(Programmers.lv1_로또의최고순위와최저순위.solution([44, 1, 0, 0, 31, 25], [31, 10, 45, 1, 6, 19]))
-print(Programmers.lv1_로또의최고순위와최저순위.solution([0, 0, 0, 0, 0, 0], [38, 19, 20, 40, 15, 25]))
-print(Programmers.lv1_로또의최고순위와최저순위.solution([45, 4, 35, 20, 3, 9], [20, 9, 3, 45, 4, 35]))
-print(Programmers.lv1_로또의최고순위와최저순위.solution([1, 2, 3, 4, 5, 6],[7, 8, 9, 10, 11, 12]))
+import Programmers.lv1_덧칠하기
+print(Programmers.lv1_덧칠하기.solution(16,4,[2,3,15,16]))
+print(Programmers.lv1_덧칠하기.solution(8,4,[2, 3, 6]))
+print(Programmers.lv1_덧칠하기.solution(10, 2, [9, 10]))
+print(Programmers.lv1_덧칠하기.solution(5,4,[1, 3]))
+print(Programmers.lv1_덧칠하기.solution(4,1,[1, 2, 3, 4]))
+
+# import Programmers.lv1_로또의최고순위와최저순위
+# print(Programmers.lv1_로또의최고순위와최저순위.solution([44, 1, 0, 0, 31, 25], [31, 10, 45, 1, 6, 19]))
+# print(Programmers.lv1_로또의최고순위와최저순위.solution([0, 0, 0, 0, 0, 0], [38, 19, 20, 40, 15, 25]))
+# print(Programmers.lv1_로또의최고순위와최저순위.solution([45, 4, 35, 20, 3, 9], [20, 9, 3, 45, 4, 35]))
+# print(Programmers.lv1_로또의최고순위와최저순위.solution([1, 2, 3, 4, 5, 6],[7, 8, 9, 10, 11, 12]))
 
 # import Programmers.lv2_옹알이2
 # print(Programmers.lv2_옹알이2.solution(["ayaye", "uuu", "yeye", "yemawoo", "ayaayaa"]))
